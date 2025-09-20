@@ -1,0 +1,76 @@
+.mc, .mc * { box-sizing: border-box; z-index: 1; }
+.mc {
+  --bg-image: url("../assets/images/minecraft.jpg");
+
+  background:
+    linear-gradient(rgba(16, 20, 26, 0.65), rgba(16, 20, 26, 0.65)),
+    var(--bg-image) no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  margin: 0;
+  position: relative;
+
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mc a { text-decoration: none; }
+.mc p { margin: 0; padding: 3px; }
+.mc .container { text-align: center; }
+
+.mc .logo img { width: 225px; animation: logo 5s ease-in-out infinite; }
+@keyframes logo { 0%{transform:scale(1)} 50%{transform:scale(1.07)} 100%{transform:scale(1)} }
+
+.mc .playercount{
+  display:inline-block; margin:20px 15px 15px; padding:2px 0;
+  background-color:rgba(15,199,209,.75); font-size:1em; color:#fff;
+  text-align:center; border-radius:5px 0 5px 0; line-height:27px;
+}
+.mc .playercount > p > span{
+  font-weight:700; padding:1px 4px; border-radius:3px;
+  background:rgba(9,150,158,.7); margin:0 2px;
+}
+
+.mc .extrapad{ padding:0; }
+.mc .ip{ cursor:pointer; display:inline-block; color:#fff;
+  text-shadow:2px 2px 5px rgba(255,255,255,.3); margin-top:4px; font-weight:600; }
+
+.mc .items{ display:flex; justify-content:space-around; flex-basis:100px;
+  padding:18px 0 10px; gap:36px; flex-wrap:wrap; }
+
+.mc .item img{ transition:all .2s ease; margin-bottom:7px; }
+.mc .item img:hover{ transform:scale(1.1); }
+
+.mc .img{ width:80%; }
+.mc .title{ font-weight:700; font-size:17px; color:#fff; }
+.mc .subtitle{ color:#cfcfcf; font-size:12px; }
+.mc .title,.mc .subtitle{ margin:0; padding:0; }
+
+.mc .tsparticles{ position:absolute; inset:0; z-index:0; }
+
+/* responsive */
+@media (min-width:400px){
+  .mc .logo img{ width:280px; }
+  .mc .playercount{ margin-top:30px; padding:5px; }
+  .mc .playercount > p > span{ padding:2px 7px; }
+}
+@media (min-width:1250px){
+  .mc .title{ font-size:24px; }
+  .mc .subtitle{ font-size:15px; }
+  .mc .logo img{ width:470px; }
+  .mc .logo{ margin-bottom:23px; }
+  .mc .img{ width:100%; }
+  .mc .items{ padding:30px 0 20px; }
+  .mc .playercount{ font-size:1.22em; padding:10px; }
+  .mc .extrapad{ padding:0 42.5px; }
+  .mc .playercount > p > span{ padding:4px 7px; }
+}
+@media (min-width:1000px){
+  .mc .items{ justify-content:center; }
+  .mc .item:not(:first-child){ margin-left:90px; }
+}
