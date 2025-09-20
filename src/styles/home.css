@@ -43,6 +43,12 @@
 .mc .items{ display:flex; justify-content:space-around; flex-basis:100px;
   padding:18px 0 10px; gap:36px; flex-wrap:wrap; }
 
+.mc .item{
+  flex: 0 0 200px;
+  max-width: 200px;
+  text-align:center;
+}
+
 .mc .item img{ transition:all .2s ease; margin-bottom:7px; }
 .mc .item img:hover{ transform:scale(1.1); }
 

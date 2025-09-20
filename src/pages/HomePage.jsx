@@ -1,11 +1,11 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
-import forums from '../assets/images/forums.png';
+import dailyboss from '../assets/images/dailyboss.png';
 import logo from '../assets/images/logo.png';
-import minecraft from '../assets/images/minecraft.jpg';
-import store from '../assets/images/store.png';
-import vote from '../assets/images/vote.png';
+import minecraft from '../assets/images/minecraft.png';
+import annoyingvillagers from '../assets/images/annoyingvillagers.jpg';
+import randomgatewayspawning from '../assets/images/randomgatewayspawning.png';
 import "../styles/home.css";
 
 export default function HomePage({
@@ -28,6 +28,51 @@ export default function HomePage({
     background: { color: "transparent" },
   }), []);
 
+  const [annoyingVillagersDownloadCount, setAnnoyingVillagersDownloadCount] = useState(null);
+  const [dailyBossDownloadCount, setDailyBossDownloadCount] = useState(null);
+  const [randomgatewayspawningDownloadCount, setRandomgatewayspawningDownloadCount] = useState(null);
+
+  const API_BASE = "https://api.curseforge.com";
+  const API_KEY = import.meta.env.VITE_CURSEFORGE_API_KEY;
+
+  useEffect(() => {
+    if (!API_KEY) {
+      setLoadErr("Missing VITE_CURSEFORGE_API_KEY in .env");
+      return;
+    }
+
+    const ids = [
+      { id: 1308998, set: setAnnoyingVillagersDownloadCount },
+      { id: 1297381, set: setDailyBossDownloadCount },
+      { id: 1277910, set: setRandomgatewayspawningDownloadCount },
+    ];
+
+    let cancelled = false;
+
+    const fetchCount = async (modId) => {
+      const res = await fetch(`${API_BASE}/v1/mods/${modId}`, {
+        headers: { Accept: "application/json", "x-api-key": API_KEY },
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const json = await res.json();
+      const count = json?.data?.downloadCount ?? json?.downloadCount;
+      return typeof count === "number" ? count : null;
+    };
+
+    (async () => {
+      const results = await Promise.allSettled(ids.map(({ id }) => fetchCount(id)));
+      if (cancelled) return;
+
+      results.forEach((r, i) => {
+        const setter = ids[i].set;
+        if (r.status === "fulfilled") setter(r.value);
+        else setter(null);
+      });
+    })().catch(e => !cancelled && setLoadErr(e.message || String(e)));
+
+    return () => { cancelled = true; };
+  }, [API_BASE, API_KEY]);
+
   return (
     <div className="mc" style={{ ["--bg-image"]: `url("${bgImage}")` }}>
       <Particles className="tsparticles" init={particlesInit} options={particleOptions} />
@@ -38,23 +83,31 @@ export default function HomePage({
         </div>
 
         <div className="items">
-
           <a className="item" href="#vote">
-            <img className="img" src={vote} alt="Vote" />
-            <p className="title">Vote</p>
-            <p className="subtitle">Support the server</p>
+            <img className="img" src={randomgatewayspawning} alt="Vote" />
+            <p className="title">Gateway Spawning</p>
+            <p className="subtitle">
+              {randomgatewayspawningDownloadCount == null ? "Loading…" :
+                `${randomgatewayspawningDownloadCount.toLocaleString()} downloads`}
+            </p>
           </a>
 
           <a className="item" href="#store">
-            <img className="img" src={store} alt="Store" />
-            <p className="title">Store</p>
-            <p className="subtitle">Ranks & perks</p>
+            <img className="img" src={annoyingvillagers} alt="Store" />
+            <p className="title">Annoying Villagers</p>
+            <p className="subtitle">
+              {annoyingVillagersDownloadCount == null ? "Loading…" :
+                `${annoyingVillagersDownloadCount.toLocaleString()} downloads`}
+            </p>
           </a>
 
           <a className="item" href="#discord">
-            <img className="img" src={forums} alt="Discord" />
-            <p className="title">Discord</p>
-            <p className="subtitle">Join the community</p>
+            <img className="img" src={dailyboss} alt="Discord" />
+            <p className="title">Daily Boss</p>
+            <p className="subtitle">
+              {dailyBossDownloadCount == null ? "Loading…" :
+                `${dailyBossDownloadCount.toLocaleString()} downloads`}
+            </p>
           </a>
         </div>
       </div>
