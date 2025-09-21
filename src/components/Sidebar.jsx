@@ -12,7 +12,7 @@ export default function Sidebar({ categories, activeId, onPick }) {
             className={"sidebar__btn" + (c.id === activeId ? " is-active" : "")}
           >
             <div className="sidebar__btnTitle">{c.name}</div>
-            <div className="sidebar__btnMeta">{c.items.length} entries</div>
+            {/* <div className="sidebar__btnMeta">{c.items.size} entries</div> */}
           </button>
         ))}
       </div>
