@@ -7,6 +7,7 @@ import minecraft from '../assets/images/minecraft.png';
 import annoyingvillagers from '../assets/images/annoyingvillagers.jpg';
 import randomgatewayspawning from '../assets/images/randomgatewayspawning.png';
 import "../styles/home.css";
+import { Link } from "react-router-dom";
 
 export default function HomePage({
   logoSrc = logo,
@@ -84,7 +85,7 @@ export default function HomePage({
 
         <div className="items">
           <a className="item" href="#vote">
-            <img className="img" src={randomgatewayspawning} alt="Vote" />
+            <img className="img" src={randomgatewayspawning} alt="RandomGatewaySpawning" />
             <p className="title">Gateway Spawning</p>
             <p className="subtitle">
               {randomgatewayspawningDownloadCount == null ? "Loading…" :
@@ -92,17 +93,17 @@ export default function HomePage({
             </p>
           </a>
 
-          <a className="item" href="#store">
-            <img className="img" src={annoyingvillagers} alt="Store" />
+          <Link className="item" to="/annoyingvillagers">
+            <img className="img" src={annoyingvillagers} alt="AnnoyingVillagers" />
             <p className="title">Annoying Villagers</p>
             <p className="subtitle">
               {annoyingVillagersDownloadCount == null ? "Loading…" :
                 `${annoyingVillagersDownloadCount.toLocaleString()} downloads`}
             </p>
-          </a>
+          </Link>
 
           <a className="item" href="#discord">
-            <img className="img" src={dailyboss} alt="Discord" />
+            <img className="img" src={dailyboss} alt="DailyBoss" />
             <p className="title">Daily Boss</p>
             <p className="subtitle">
               {dailyBossDownloadCount == null ? "Loading…" :
