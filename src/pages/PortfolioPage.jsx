@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Header from "../components/Header.jsx";
 import About from "../sections/About.jsx";
 import Education from "../sections/Education.jsx";
@@ -9,7 +9,7 @@ import useScrollSpy from "../hooks/useScrollSpy.js";
 import PorfolioHome from "../sections/PorfolioHome.jsx";
 import '../styles/portfolio.css'
 
-function PortfolioPage() {
+const PortfolioPage = () => {
   const sectionIds = ["home", "about", "education", "skills", "projects"];
   const activeId = useScrollSpy(sectionIds);
   const [menuOpen, setMenuOpen] = useState(false);

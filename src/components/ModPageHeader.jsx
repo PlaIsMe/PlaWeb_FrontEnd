@@ -1,6 +1,4 @@
-import React from "react";
-
-function ModPageHeader({ title, value, onChange }) {
+const ModPageHeader = ({ title, value, onChange }) => {
   return (
     <header className="hdr">
       <div className="hdr__inner">

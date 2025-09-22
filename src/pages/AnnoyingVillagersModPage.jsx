@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import "../styles/modpage.css";
 import ModPageHeader from "../components/ModPageHeader.jsx";
 import Sidebar from "../components/Sidebar";
@@ -6,7 +6,7 @@ import ItemCard from "../components/ItemCard.jsx";
 import RightContents from "../components/RightContents.jsx";
 import { api, endpoints } from "../configs/Api.jsx";
 
-function AnnoyingVillagersModPage() {
+const AnnoyingVillagersModPage = () => {
     const [activeCat, setActiveCat] = useState(null);
     const [query, setQuery] = useState("");
     const [categories, setCategories] = useState([]);

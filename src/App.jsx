@@ -9,6 +9,8 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
 
+      <Route path="/*" element={<HomePage />} />
+
       <Route path="/portfolio" element={<PortfolioPage />} />
 
       <Route path="/annoyingvillagers" element={<AnnoyingVillagersModPage />} />

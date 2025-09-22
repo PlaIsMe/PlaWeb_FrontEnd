@@ -1,6 +1,5 @@
-import React from 'react'
 
-function PorfolioHome() {
+const PorfolioHome = () => {
   return (
     <section className="home show-animate" id="home">
       <div className="home-content">

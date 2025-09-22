@@ -1,5 +1,3 @@
-import React from 'react'
-
 import java from "../assets/images/icons/java.png";
 import python from "../assets/images/icons/python.png";
 import cplusplus from "../assets/images/icons/c++.png";
@@ -44,7 +42,7 @@ const ICONS = [
   { name: "Springboot", src: springboot, shape: "long" },
 ];
 
-function Skills() {
+const Skills = () => {
   return (
     <section className="skills" id="skills">
       <h2 className="heading">

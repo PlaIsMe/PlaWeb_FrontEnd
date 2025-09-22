@@ -1,5 +1,3 @@
-import React from "react";
-
 const PROJECTS = [
   {
     title: "Ho Chi Minh City Open University Alumni Social Network",
@@ -33,7 +31,7 @@ const PROJECTS = [
   },
 ];
 
-function Project() {
+const Project = () => {
   return (
     <section className="projects" id="projects">
       <h2 className="heading">

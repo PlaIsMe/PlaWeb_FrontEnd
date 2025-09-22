@@ -1,6 +1,4 @@
-import React from "react";
-
-function ItemCard({ item, variant = "default" }) {
+const ItemCard = ({ item, variant = "default" }) => {
     if (variant === "boss") {
         return (
             <section id={item.id} className="card card--boss">

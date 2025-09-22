@@ -1,6 +1,4 @@
-import React from 'react'
-
-function Header({ activeId, menuOpen, toggleMenu, isSticky }) {
+const Header = ({ activeId, menuOpen, toggleMenu, isSticky }) => {
   return (
     <header className={`header ${isSticky ? 'sticky' : ''}`}>
       <a href="#home" className="logo">

@@ -1,6 +1,4 @@
-import React from 'react'
-
-function Footer({ animate }) {
+const Footer = ({ animate }) => {
   return (
     <footer className={`footer ${animate ? 'show-animate' : ''}`}>
       <div className="footer-text">

@@ -1,6 +1,4 @@
-import React from "react";
-
-function RightContents({ items, onJump }) {
+const RightContents = ({ items, onJump }) => {
   return (
     <aside className="toc">
       <div className="toc__title">Contents</div>

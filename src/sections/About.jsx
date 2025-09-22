@@ -1,7 +1,6 @@
-import React from 'react'
 import avatar from '../assets/images/avatar.jpg';
 
-function About() {
+const About = () => {
   return (
     <section className="about" id="about">
       <h2 className="heading">

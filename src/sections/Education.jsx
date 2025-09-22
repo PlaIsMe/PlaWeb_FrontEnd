@@ -1,6 +1,5 @@
-import React from 'react'
 
-function Education() {
+const Education = () => {
   return (
     <section className="education" id="education">
       <h2 className="heading">

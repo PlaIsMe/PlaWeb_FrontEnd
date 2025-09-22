@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import dailyboss from '../assets/images/dailyboss.png';
@@ -9,10 +9,10 @@ import randomgatewayspawning from '../assets/images/randomgatewayspawning.png';
 import "../styles/home.css";
 import { Link } from "react-router-dom";
 
-function HomePage({
+const HomePage = ({
   logoSrc = logo,
   bgImage = minecraft,
-}) {
+}) => {
   const particlesInit = useCallback(async engine => {
     await loadSlim(engine);
   }, []);

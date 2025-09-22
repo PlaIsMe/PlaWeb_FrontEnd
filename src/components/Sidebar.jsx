@@ -1,6 +1,4 @@
-import React from "react";
-
-function Sidebar({ categories, activeId, onPick }) {
+const Sidebar = ({ categories, activeId, onPick }) => {
   return (
     <aside className="sidebar">
       <div className="sidebar__sectionTitle">Categories</div>
