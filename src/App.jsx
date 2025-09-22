@@ -4,7 +4,7 @@ import HomePage from "./pages/HomePage.jsx";
 import PortfolioPage from "./pages/PortfolioPage.jsx";
 import AnnoyingVillagersModPage from "./pages/AnnoyingVillagersModPage.jsx";
 
-export default function App() {
+function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
@@ -12,8 +12,8 @@ export default function App() {
       <Route path="/portfolio" element={<PortfolioPage />} />
 
       <Route path="/annoyingvillagers" element={<AnnoyingVillagersModPage />} />
-
-      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
+
+export default App

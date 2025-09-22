@@ -1,6 +1,6 @@
 .mc, .mc * { box-sizing: border-box; z-index: 1; }
 .mc {
-  --bg-image: url("../assets/images/minecraft.jpg");
+  --bg-image: url("../assets/images/minecraft.png");
 
   background:
     linear-gradient(rgba(16, 20, 26, 0.65), rgba(16, 20, 26, 0.65)),

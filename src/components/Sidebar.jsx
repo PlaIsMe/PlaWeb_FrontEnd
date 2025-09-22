@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Sidebar({ categories, activeId, onPick }) {
+function Sidebar({ categories, activeId, onPick }) {
   return (
     <aside className="sidebar">
       <div className="sidebar__sectionTitle">Categories</div>
@@ -19,3 +19,5 @@ export default function Sidebar({ categories, activeId, onPick }) {
     </aside>
   );
 }
+
+export default Sidebar

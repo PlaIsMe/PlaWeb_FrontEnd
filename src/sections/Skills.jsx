@@ -44,7 +44,7 @@ const ICONS = [
   { name: "Springboot", src: springboot, shape: "long" },
 ];
 
-export default function Skills() {
+function Skills() {
   return (
     <section className="skills" id="skills">
       <h2 className="heading">
@@ -70,3 +70,5 @@ export default function Skills() {
     </section>
   );
 }
+
+export default Skills

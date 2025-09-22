@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Education() {
+function Education() {
   return (
     <section className="education" id="education">
       <h2 className="heading">
@@ -72,3 +72,5 @@ export default function Education() {
     </section>
   )
 }
+
+export default Education

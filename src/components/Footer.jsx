@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Footer({ animate }) {
+function Footer({ animate }) {
   return (
     <footer className={`footer ${animate ? 'show-animate' : ''}`}>
       <div className="footer-text">
@@ -15,3 +15,5 @@ export default function Footer({ animate }) {
     </footer>
   )
 }
+
+export default Footer

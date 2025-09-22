@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import dailyboss from '../assets/images/dailyboss.png';
@@ -9,7 +9,7 @@ import randomgatewayspawning from '../assets/images/randomgatewayspawning.png';
 import "../styles/home.css";
 import { Link } from "react-router-dom";
 
-export default function HomePage({
+function HomePage({
   logoSrc = logo,
   bgImage = minecraft,
 }) {
@@ -38,7 +38,6 @@ export default function HomePage({
 
   useEffect(() => {
     if (!API_KEY) {
-      setLoadErr("Missing VITE_CURSEFORGE_API_KEY in .env");
       return;
     }
 
@@ -69,7 +68,7 @@ export default function HomePage({
         if (r.status === "fulfilled") setter(r.value);
         else setter(null);
       });
-    })().catch(e => !cancelled && setLoadErr(e.message || String(e)));
+    })().catch();
 
     return () => { cancelled = true; };
   }, [API_BASE, API_KEY]);
@@ -115,3 +114,5 @@ export default function HomePage({
     </div>
   );
 }
+
+export default HomePage

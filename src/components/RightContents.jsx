@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function RightContents({ items, onJump }) {
+function RightContents({ items, onJump }) {
   return (
     <aside className="toc">
       <div className="toc__title">Contents</div>
@@ -14,3 +14,5 @@ export default function RightContents({ items, onJump }) {
     </aside>
   );
 }
+
+export default RightContents

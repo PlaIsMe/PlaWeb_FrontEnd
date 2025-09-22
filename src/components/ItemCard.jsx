@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ItemCard({ item, variant = "default" }) {
+function ItemCard({ item, variant = "default" }) {
     if (variant === "boss") {
         return (
             <section id={item.id} className="card card--boss">
@@ -69,3 +69,5 @@ export default function ItemCard({ item, variant = "default" }) {
         </section>
     );
 }
+
+export default ItemCard

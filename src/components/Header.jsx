@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Header({ activeId, menuOpen, toggleMenu, isSticky }) {
+function Header({ activeId, menuOpen, toggleMenu, isSticky }) {
   return (
     <header className={`header ${isSticky ? 'sticky' : ''}`}>
       <a href="#home" className="logo">
@@ -29,3 +29,5 @@ export default function Header({ activeId, menuOpen, toggleMenu, isSticky }) {
     </header>
   )
 }
+
+export default Header

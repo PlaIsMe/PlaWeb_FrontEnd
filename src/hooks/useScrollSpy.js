@@ -14,7 +14,7 @@ export default function useScrollSpy(sectionIds) {
 
     const callback = (entries) => {
       entries.forEach((entry) => {
-        const id = entry.target.getAttribute('id')
+        entry.target.getAttribute('id')
         if (entry.isIntersecting) {
           entry.target.classList.add('show-animate')
         }

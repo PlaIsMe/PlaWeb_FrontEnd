@@ -9,7 +9,7 @@ import useScrollSpy from "../hooks/useScrollSpy.js";
 import PorfolioHome from "../sections/PorfolioHome.jsx";
 import '../styles/portfolio.css'
 
-export default function PortfolioPage() {
+function PortfolioPage() {
   const sectionIds = ["home", "about", "education", "skills", "projects"];
   const activeId = useScrollSpy(sectionIds);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -51,3 +51,5 @@ export default function PortfolioPage() {
     </>
   );
 }
+
+export default PortfolioPage

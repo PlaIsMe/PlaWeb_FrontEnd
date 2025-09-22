@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ModPageHeader({ title, value, onChange }) {
+function ModPageHeader({ title, value, onChange }) {
   return (
     <header className="hdr">
       <div className="hdr__inner">
@@ -15,3 +15,5 @@ export default function ModPageHeader({ title, value, onChange }) {
     </header>
   );
 }
+
+export default ModPageHeader

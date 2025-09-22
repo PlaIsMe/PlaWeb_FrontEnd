@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function PorfolioHome() {
+function PorfolioHome() {
   return (
     <section className="home show-animate" id="home">
       <div className="home-content">
@@ -57,3 +57,5 @@ export default function PorfolioHome() {
     </section>
   )
 }
+
+export default PorfolioHome

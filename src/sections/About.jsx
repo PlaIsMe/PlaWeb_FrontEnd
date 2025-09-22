@@ -1,7 +1,7 @@
 import React from 'react'
 import avatar from '../assets/images/avatar.jpg';
 
-export default function About() {
+function About() {
   return (
     <section className="about" id="about">
       <h2 className="heading">
@@ -40,3 +40,5 @@ export default function About() {
     </section>
   )
 }
+
+export default About

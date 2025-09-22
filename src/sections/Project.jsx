@@ -33,7 +33,7 @@ const PROJECTS = [
   },
 ];
 
-export default function Project() {
+function Project() {
   return (
     <section className="projects" id="projects">
       <h2 className="heading">
@@ -78,3 +78,5 @@ export default function Project() {
     </section>
   );
 }
+
+export default Project
